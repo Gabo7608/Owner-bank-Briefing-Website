@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Bank | Status Silencioso</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep-green: #0C1F17;
+            --matte-black: #050505;
+            --editorial-white: #F5F5F5;
+            --green-glow: #1DB954;
+            --soft-glow: rgba(29, 185, 84, 0.2);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--matte-black);
+            color: var(--editorial-white);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, var(--bg-deep-green) 0%, var(--matte-black) 80%);
+            padding: 20px;
+        }
+
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 300; margin-bottom: 20px; letter-spacing: -2px; }
+        .hero p { max-width: 700px; font-size: 1.2rem; opacity: 0.7; margin-bottom: 40px; }
+
+        /* --- Botões --- */
+        .cta-button {
+            padding: 18px 45px;
+            background: transparent;
+            color: var(--editorial-white);
+            border: 1px solid var(--editorial-white);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.4s;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background: var(--editorial-white);
+            color: var(--matte-black);
+            box-shadow: 0 0 30px var(--soft-glow);
+        }
+
+        /* --- Seção de Diferenciais (Cards Grandes) --- */
+        .differentials {
+            padding: 100px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            padding: 50px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            transition: 0.3s;
+        }
+
+        .card:hover { border-color: var(--green-glow); transform: translateY(-5px); }
+        .card h3 { font-size: 1.5rem; margin-bottom: 15px; font-weight: 400; }
+        .card p { opacity: 0.6; }
+
+        /* --- Seção Cartão 3D --- */
+        .card-feature { padding: 100px 10%; display: flex; align-items: center; justify-content: center; gap: 80px; flex-wrap: wrap; }
+        
+        .owner-card-3d {
+            width: 380px; height: 240px;
+            background: linear-gradient(135deg, var(--bg-deep-green), #000);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            transform-style: preserve-3d;
+            transition: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        }
+
+        .owner-card-3d:hover { transform: rotateY(20deg) rotateX(5deg); }
+        .chip { width: 45px; height: 35px; background: #333; border-radius: 6px; position: absolute; top: 30px; left: 30px; }
+        .logo-card { position: absolute; bottom: 30px; left: 30px; letter-spacing: 4px; font-weight: 300; }
+
+        /* --- FAQ --- */
+        .faq { padding: 100px 20%; background: #080808; }
+        .faq h2 { text-align: center; margin-bottom: 50px; font-weight: 300; }
+        .faq-item { margin-bottom: 30px; border-bottom: 1px solid #1a1a1a; padding-bottom: 20px; }
+        .faq-item strong { display: block; margin-bottom: 10px; color: var(--green-glow); }
+
+        /* --- Formulário --- */
+        .cta-form-section { padding: 100px 10%; text-align: center; background: var(--matte-black); }
+        .owner-form { max-width: 500px; margin: 40px auto; display: flex; flex-direction: column; gap: 20px; }
+        .owner-form input, .owner-form select {
+            padding: 15px; background: #111; border: 1px solid #222; color: white; border-radius: 4px;
+        }
+        .cta-button-form {
+            padding: 20px; background: var(--bg-deep-green); color: white; border: none; cursor: pointer;
+            text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
+        }
+        .cta-button-form:hover { background: var(--green-glow); }
+
+        footer { padding: 50px; text-align: center; border-top: 1px solid #1a1a1a; opacity: 0.4; font-size: 0.8rem; }
+        
+        @media (max-width: 768px) { .card-feature { flex-direction: column; text-align: center; } .owner-card-3d { width: 300px; height: 180px; } }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>Pare de obedecer regras. <br> Comece a escrever as próprias.</h1>
+        <p>O Owner Bank oferece uma experiência bancária com estética editorial, tecnologia invisível e status silencioso.</p>
+        <a href="#abertura-conta" class="cta-button">Solicitar Acesso</a>
+    </section>
+
+    <section class="differentials">
+        <div class="card">
+            <h3>Dupla Identidade</h3>
+            <p>Acesso simultâneo a contas PF e PJ no mesmo app. Transições fluidas para quem constrói impérios.</p>
+        </div>
+        <div class="card">
+            <h3>Investimentos Prioritários</h3>
+            <p>Acesso antecipado a oportunidades antes do mercado comum. Antecipe o futuro.</p>
+        </div>
+        <div class="card">
+            <h3>Benefícios Globais</h3>]
+            <p>Salas VIP, concierge e vantagens de lifestyle que acompanham seu ritmo global.</p>
+        </div>
+    </section>
+
+    <section class="card-feature">
+        <div class="owner-card-3d">
+            <div class="chip"></div>
+            <div class="logo-card">OWNER</div>
+        </div>
+        <div style="max-width: 500px;">
+            <h2>Cartão Owner Visa</h2>
+            <p>Design exclusivo com visual editorial e sem clichês. Um símbolo de domínio e autonomia real.</p>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>FAQ Elegante</h2>
+        <div class="faq-item">
+            <strong>O Owner Bank é para mim?</strong>
+            <p>Criado para empresários, visionários e líderes modernos que não se encaixam em caixas tradicionais.</p>
+        </div>
+        <div class="faq-item">
+            <strong>Como funciona o suporte?</strong>
+            <p>Atendimento Priority em tempo real. Sem filas, sem burocracia, apenas soluções.</p>
+        </div>
+    </section>
+
+    <section class="cta-form-section" id="abertura-conta">
+        <div class="form-wrapper">
+            <h2>Pronto para assumir o domínio?</h2>
+            <p>Inicie sua jornada rumo à liberdade financeira agora.</p>
+            <form class="owner-form">
+                <input type="text" placeholder="Nome Completo" required>
+                <input type="email" placeholder="E-mail" required>
+                <select required>
+                    <option value="" disabled selected>Escolha seu perfil</option>
+                    <option value="empresario">Empresário</option>
+                    <option value="lider">Líder Moderno</option>
+                </select>
+                <button type="submit" class="cta-button-form">Abrir minha conta Owner</button> 
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Owner Bank. Domínio Financeiro. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
